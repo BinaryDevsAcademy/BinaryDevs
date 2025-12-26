@@ -44,7 +44,7 @@
   --bd-text: var(--bd-gray-900);
   --bd-text-light: var(--bd-gray-600);
   --bd-text-muted: var(--bd-gray-500);
-
+  --bd-text-error : red;
   /* ---------- BORDERS ---------- */
   --bd-border: var(--bd-gray-200);
   --bd-border-dark: var(--bd-gray-300);
@@ -191,4 +191,28 @@
     transparent 100%
   );
 
+}
+
+
+.new{
+  background-color: var(--bd-primary);
+  color : var(--bd-white);
+  font-weight: 600;
+}
+
+.contacted{
+  background-color: var(--bd-accent);
+  font-weight: 600;
+}
+
+.followup{
+  background-color: var(--bd-black);
+  color : var(--bd-white);
+  font-weight: 600;
+}
+
+.converted{
+  background-color: var(--bd-secondary);
+  color : var(--bd-white);
+  font-weight: 600;
 }
