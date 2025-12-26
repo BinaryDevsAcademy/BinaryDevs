@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import TableManagement from '../ReUsedComponents/TableManagement';
+import { connectWebSocket } from '../../../apis/websocket';
 
 function LeadsPage() {
 
@@ -63,11 +65,19 @@ function LeadsPage() {
         },
     ];
 
+    const [leads, setLeads] = useState([])
+
+    useEffect(() => {
+        connectWebSocket((lead) => {
+            setLeads(prev => [...leadsEnquiries, lead, ...prev])
+        })
+    }, [])
+
     
     return(
         <TableManagement
             title="All Leads"
-            data={leadsEnquiries}
+            data={leads}
             columns={leadsColumns}
             searchKeys={["fullName", "email", "phone", "message"]}
             statusKey="status"
